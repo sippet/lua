@@ -96,6 +96,14 @@
             'defines': [
               'LUA_USE_MACOSX'
             ],
+            'xcode_settings': {
+              'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+            },
+            'all_dependent_settings': {
+              'xcode_settings': {
+                'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+              },
+            },
           },
         ],
       ],
