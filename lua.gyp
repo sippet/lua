@@ -10,12 +10,18 @@
       'include_dirs': [
         './source',
       ],
+      'defines': [
+        'LUA_FORWARD_IO',
+      ],
       # Lua compiled as C++ do use exceptions
       'cflags_cc!': [ '-fno-exceptions' ],
       'all_dependent_settings': {
         'cflags_cc!': [ '-fno-exceptions' ],
         'include_dirs': [
           './source',
+        ],
+        'defines': [
+          'LUA_FORWARD_IO',
         ],
       },
       'sources': [

@@ -211,19 +211,31 @@ LUALIB_API void (luaL_openlib) (lua_State *L, const char *libname,
 */
 
 /* print a string */
+#if defined(LUA_FORWARD_IO)
+LUALIB_API void (lua_writestring) (const char *s, size_t len);
+#else
 #if !defined(lua_writestring)
 #define lua_writestring(s,l)   fwrite((s), sizeof(char), (l), stdout)
 #endif
+#endif
 
 /* print a newline and flush the output */
+#if defined(LUA_FORWARD_IO)
+LUALIB_API void (lua_writeline) ();
+#else
 #if !defined(lua_writeline)
 #define lua_writeline()        (lua_writestring("\n", 1), fflush(stdout))
 #endif
+#endif
 
 /* print an error message */
+#if defined(LUA_FORWARD_IO)
+LUALIB_API void (lua_writestringerror) (const char *fmt, const char *prm);
+#else
 #if !defined(lua_writestringerror)
 #define lua_writestringerror(s,p) \
         (fprintf(stderr, (s), (p)), fflush(stderr))
+#endif
 #endif
 
 /* }================================================================== */
