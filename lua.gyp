@@ -98,10 +98,14 @@
             ],
             'xcode_settings': {
               'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+              'CLANG_CXX_LANGUAGE_STANDARD': 'c++11',
+              'CLANG_CXX_LIBRARY': 'libc++',  # -stdlib=libc++
             },
             'all_dependent_settings': {
               'xcode_settings': {
                 'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
+                'CLANG_CXX_LANGUAGE_STANDARD': 'c++11',
+                'CLANG_CXX_LIBRARY': 'libc++',
               },
             },
           },
