@@ -15,9 +15,6 @@
       ],
       # Lua compiled as C++ do use exceptions
       'cflags_cc!': [ '-fno-exceptions' ],
-      'dependencies': [
-        '<(DEPTH)/buildtools/third_party/libc++/libc++.gyp:libcxx_proxy'
-      ],
       'all_dependent_settings': {
         'cflags_cc!': [ '-fno-exceptions' ],
         'include_dirs': [
