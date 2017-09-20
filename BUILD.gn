@@ -16,7 +16,7 @@ config("lua_config") {
   }
 }
 
-component("lua") {
+static_library("lua") {
   sources = [
     "source/lapi.cc",
     "source/lapi.h",
